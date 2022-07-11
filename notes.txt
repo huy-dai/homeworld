@@ -1,0 +1,4 @@
+According to https://stackoverflow.com/a/28369841, we can use the 26490-26999 port range for internal applications.
+
+Port Assignment:
+26560   Nix Package Cache Proxy

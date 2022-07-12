@@ -47,11 +47,11 @@ if [ ! -f "${VM_FILE}" ]; then
                 --device /dev/kvm \
                 -v "$HOMEWORLD_PATH":/homeworld \
                 docker.io/nixos/nix \
-                /bin/sh /homeworld/scripts/setup_vm.sh "${VM_GUEST}"
+                /bin/sh /homeworld/scripts/setup_vm.sh "${VM_GUEST}" "http://172.17.0.2:26560"
 
     echo "VM created. Moving to HOMEWORLD_VM_ROOT"
     mkdir -p "${HOMEWORLD_VM_ROOT}"
-    mv "${VM_FILE}" "${HOMEWORLD_VM_ROOT}"
+    mv "${HOMEWORLD_PATH}/$1.qcow2" "${HOMEWORLD_VM_ROOT}"
 fi
 
 # Grab VM-specific arguments

@@ -52,6 +52,7 @@ if [ ! -f "${VM_FILE}" ]; then
     echo "VM created. Moving to HOMEWORLD_VM_ROOT"
     mkdir -p "${HOMEWORLD_VM_ROOT}"
     mv "${HOMEWORLD_PATH}/$1.qcow2" "${HOMEWORLD_VM_ROOT}"
+    #TODO: Change owner of generated qcow and add write permissions
 fi
 
 # Grab VM-specific arguments

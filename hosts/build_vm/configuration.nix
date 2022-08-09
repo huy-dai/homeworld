@@ -17,8 +17,14 @@
 
   time.timeZone = "America/New_York";
 
-  networking.hostName = "hyades-virt-1";
+  networking.hostName = "hyades-build-vm";
   services.sshd.enable = true;
+
+  # Serve built packages, and also cache requests to cache.nixos.org
+  services.nginx.enable = true;
+  services.nix-serve = {
+    enable = true;
+  };
 
   networking.firewall.allowedTCPPorts = [ 22 ];
 
@@ -33,6 +39,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
+
+  system.copySystemConfiguration = true;
 }
 
 # vim:set ts=2 sw=2 et:

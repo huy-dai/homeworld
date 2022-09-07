@@ -2,6 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+# After successful boot-up, do:
+# echo TOKEN | nixos-kubernetes-node-join
+#     Use the token we got from the Master node
+
+# Troubleshooting
+# 0. Verify that worker node is able to contact master node
+# 1. Verify that certmgr.service is running
+
+
 { config, lib, pkgs, ... }:
 
 let

@@ -4,6 +4,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+# After successful boot-up, do:
+# mkdir ~/.kube
+# ln -s /etc/kubernetes/cluster-admin.kubeconfig ~/.kube/config
+# kubectl cluster-info 
+#     Verify that Kubernetes master is running
+# kubectl get nodes
+#     Verify that master is identified as a node
+# cat /var/lib/kubernetes/secrets/apitoken.secret
+#     Save this to use for the Worker node to join the cluster
+
+
 { config, lib, pkgs, ... }:
 
 let
